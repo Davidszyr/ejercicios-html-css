@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de productos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .agotado {
+            background-color: #ffaaaa;
+        }
+        form {
+            font-family: sans-serif;
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 400px;
+        }
+        .campo {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Catálogo de productos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Disponibilidad</th>
+                <th>Enlace</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>P001</td>
+                <td>Teclado</td>
+                <td>25.00 €</td>
+                <td>15</td>
+                <td>Disponible</td>
+                <td><a href="#">Ver producto</a></td>
+            </tr>
+            <tr>
+                <td>P002</td>
+                <td>Ratón</td>
+                <td>12.00 €</td>
+                <td>30</td>
+                <td>Disponible</td>
+                <td><a href="#">Ver producto</a></td>
+            </tr>
+            <tr class="agotado">
+                <td>P003</td>
+                <td>Monitor</td>
+                <td>180.00 €</td>
+                <td>0</td>
+                <td>Agotado</td>
+                <td><a href="#">Ver producto</a></td>
+            </tr>
+            <tr>
+                <td>P004</td>
+                <td>Auriculares</td>
+                <td>35.00 €</td>
+                <td>8</td>
+                <td>Disponible</td>
+                <td><a href="#">Ver producto</a></td>
+            </tr>
+            <tr>
+                <td>P005</td>
+                <td>Webcam</td>
+                <td>45.00 €</td>
+                <td>3</td>
+                <td>Disponible</td>
+                <td><a href="#">Ver producto</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

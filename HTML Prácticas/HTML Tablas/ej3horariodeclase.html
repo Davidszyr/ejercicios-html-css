@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Horario de Clase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            font-weight: bold;
+        }
+        th {
+            background-color: #e0e0e0;
+        }
+        .recreo {
+            background-color: #ffffff;
+            font-style: italic;
+            letter-spacing: 5px;
+        }
+        .info-alumno {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Horario de Clase</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+               <td>15:15 - 16:15</td>
+                <td style="background-color: #e2f0d9;">AWEBt<br>ASM2t</td>
+                <td style="background-color: #fce4d6;">SEGiT<br>ASM2t</td>
+                <td style="background-color: #fff2cc;">INGt<br>ASM2t</td>
+                <td style="background-color: #f2f2f2;">SOR<br>ASM2t</td>
+                <td style="background-color: #e1d5e7;">Opt<br>ASM2t</td>
+            </tr>
+            
+            <tr>
+                <td>16:15 - 17:15</td>
+                <td style="background-color: #e2f0d9;">AWEBt<br>ASM2t</td>
+                <td style="background-color: #fce4d6;">SEGiT<br>ASM2t</td>
+                <td style="background-color: #fff2cc;">INGt<br>ASM2t</td>
+                <td style="background-color: #f2f2f2;">SOR<br>ASM2t</td>
+                <td style="background-color: #e1d5e7;">Opt<br>ASM2t</td>
+            </tr>
+
+            <tr>
+                <td>17:15 - 18:15</td>
+                <td style="background-color: #deebf7;">Proy<br>ASM2t</td>
+                <td style="background-color: #fff2cc; color: #a6a6a6;">IPE2<br>ASM2t</td>
+                <td style="background-color: #fff2cc; color: #a6a6a6;">IPE2<br>ASM2t</td>
+                <td style="background-color: #f2f2f2;">SOR<br>ASM2t</td>
+                <td style="background-color: #e1d5e7;">Opt<br>ASM2t</td>
+            </tr>
+
+            <tr class="recreo">
+                <td>18:15 - 18:30</td>
+                <td colspan="5">RECREO </td>
+            </tr>
+
+            <tr>
+                <td>18:30 - 19:30</td>
+                <td style="background-color: #f2f2f2;">SOR<br>ASM2t</td>
+                <td style="background-color: #fff2cc; color: #a6a6a6;">IPE2<br>ASM2t</td>
+                <td style="background-color: #deebf7;">Proy<br>ASM2t</td>
+                <td style="background-color: #d9e1f2;">SRed<br>HEIGM</td>
+                <td style="background-color: #d9e1f2;">SRed<br>HEIGM</td>
+            </tr>
+
+            <tr>
+                <td>19:30 - 20:15</td>
+                <td style="background-color: #f2f2f2;">SOR<br>ASM2t</td>
+                <td style="background-color: #d9e1f2;">SRed<br>HEIGM</td>
+                <td style="background-color: #e2f0d9;">AWEBt<br>ASM2t</td>
+                <td style="background-color: #fce4d6;">SEGiT<br>ASM2t</td>
+                <td style="background-color: #d9e1f2;">SRed<br>HEIGM</td>
+            </tr>
+
+            <tr>
+                <td>20:30 - 21:30</td>
+                <td style="background-color: #f2f2f2;">SOR<br>ASM2t</td>
+                <td style="background-color: #d9e1f2;">SRed<br>HEIGM</td>
+                <td style="background-color: #e2f0d9;">AWEBt<br>ASM2t</td>
+                <td style="background-color: #fce4d6;">SEGiT<br>ASM2t</td>
+                <td style="background-color: #d9e1f2;">SRed<br>HEIGM</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-alumno">
+        <p><strong>Alumno:</strong>David Szyrkoviec Cabrera</p>
+
+        <img src="https://media.tenor.com/Zyjbr-hYtcwAAAAm/gun-desert-eagle.webp" alt="Programación GIF" width="300">
+    </div>
+
+</body>
+</html>

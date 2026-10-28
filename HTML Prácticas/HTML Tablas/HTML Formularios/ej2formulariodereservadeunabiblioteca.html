@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Formulario Biblioteca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        fieldset {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .color-pendiente {
+            background-color: #ffcc00;
+            padding: 3px;
+        }
+
+        .color-confirmada {
+            background-color: #33ccff;
+            padding: 3px;
+        }
+
+        .color-entregada {
+            background-color: #66ff66;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulario de reserva de una biblioteca</h2>
+
+    <form id="miFormulario" onsubmit="agregarReserva(event)">
+        
+            <p>
+                <label>Nombre del usuario:</label><br>
+                <input type="text" id="usuario" required>
+            </p>
+            
+            <p>
+                <label>Número de socio:</label><br>
+                <input type="number" id="socio" required>
+            </p>
+            
+            <p>
+                <label>Correo electrónico:</label><br>
+                <input type="email" id="correo" required>
+            </p>
+            
+            <p>
+                <label>Título del libro:</label><br>
+                <input type="text" id="libro" required>
+            </p>
+            
+            <p>
+                <label>Autor:</label><br>
+                <input type="text" id="autor" required>
+            </p>
+            
+            <p>
+                <label>Fecha de reserva:</label><br>
+                <input type="date" id="f_reserva" required>
+            </p>
+            
+            <p>
+                <label>Fecha prevista de recogida:</label><br>
+                <input type="date" id="f_recogida" required>
+            </p>
+            
+            <p>
+                <label>Tipo de préstamo:</label><br>
+                <input type="radio" name="tipo" value="sala" checked> Sala
+                <input type="radio" name="tipo" value="domicilio"> Domicilio
+            </p>
+            
+            <p>
+                <label>Comentarios adicionales:</label><br>
+                <textarea id="comentarios" rows="4" cols="50"></textarea>
+            </p>
+            
+            <input type="submit" value="Enviar reserva" style="background-color: #4CAF50; color: white; padding: 10px;">
+            <input type="reset" value="Limpiar campos" style="background-color: #f44336; color: white; padding: 10px;">
+            
+        </fieldset>
+    </form>
+
+    <h2>Reservas registradas</h2>
+
+    <div style="background-color: #e0e0e0; padding: 10px; margin-bottom: 15px;">
+        <label>Buscar por número de socio: </label>
+        <input type="number" id="inputBuscar" onkeyup="buscarSocio()">
+    </div>
+
+    <table id="tablaReservas" border="1">
+        <thead>
+            <tr>
+                <th>N.º reserva</th>
+                <th>Socio</th>
+                <th>Usuario</th>
+                <th>Libro</th>
+                <th>Fecha de reserva</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="fila-libro">
+                <td>1</td>
+                <td>101</td>
+                <td>Ana López</td>
+                <td>El principito</td>
+                <td>14/10/2026</td>
+                <td><span class="color-pendiente">Pendiente</span></td>
+            </tr>
+            <tr class="fila-libro">
+                <td>2</td>
+                <td>102</td>
+                <td>Pablo Ruiz</td>
+                <td>La sombra del viento</td>
+                <td>13/10/2026</td>
+                <td><span class="color-confirmada">Confirmada</span></td>
+            </tr>
+            <tr class="fila-libro">
+                <td>3</td>
+                <td>103</td>
+                <td>Marta Díaz</td>
+                <td>Don Quijote</td>
+                <td>12/10/2026</td>
+                <td><span class="color-entregada">Entregada</span></td>
+            </tr>
+            <tr class="fila-libro">
+                <td>4</td>
+                <td>104</td>
+                <td>Luis Martín</td>
+                <td>Cien años de soledad</td>
+                <td>11/10/2026</td>
+                <td><span class="color-pendiente">Pendiente</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var numeroReserva = 4;
+
+        function agregarReserva(event) {
+            event.preventDefault();
+            
+            numeroReserva = numeroReserva + 1;
+
+            var txtUsuario = document.getElementById("usuario").value;
+            var txtSocio = document.getElementById("socio").value;
+            var txtLibro = document.getElementById("libro").value;
+            var txtFecha = document.getElementById("f_reserva").value;
+
+            var tabla = document.getElementById("tablaReservas");
+            var cuerpoTabla = tabla.getElementsByTagName("tbody")[0];
+
+            var nuevaFila = cuerpoTabla.insertRow(-1);
+            nuevaFila.className = "fila-libro";
+
+            var celdaId = nuevaFila.insertCell(0);
+            var celdaSocio = nuevaFila.insertCell(1);
+            var celdaUser = nuevaFila.insertCell(2);
+            var celdaLibro = nuevaFila.insertCell(3);
+            var celdaFecha = nuevaFila.insertCell(4);
+            var celdaEstado = nuevaFila.insertCell(5);
+
+            celdaId.innerHTML = numeroReserva;
+            celdaSocio.innerHTML = txtSocio;
+            celdaUser.innerHTML = txtUsuario;
+            celdaLibro.innerHTML = txtLibro;
+            celdaFecha.innerHTML = txtFecha;
+            celdaEstado.innerHTML = '<span class="color-pendiente">Pendiente</span>';
+
+            document.getElementById("miFormulario").reset();
+        }
+        function buscarSocio() {
+            var input = document.getElementById("inputBuscar");
+            var filtro = input.value;
+            var tabla = document.getElementById("tablaReservas");
+            var filas = tabla.getElementsByClassName("fila-libro");
+
+            for (var i = 0; i < filas.length; i++) {
+             
+                var celdaSocio = filas[i].getElementsByTagName("td")[1];
+                
+                if (celdaSocio) {
+                    var textoSocio = celdaSocio.textContent || celdaSocio.innerText;
+                    
+                
+                    if (filtro === "" || textoSocio === filtro) {
+                        filas[i].style.display = "";
+                    } else {
+                        filas[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
